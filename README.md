@@ -2,6 +2,8 @@
 
 A pocket Linux computer concept with a thumb keyboard, clickable trackball and a single external USB-C opening. This repository contains the self-contained CAD generator and geometry checks for the slim packaging study.
 
+The key engineering question is where every fraction of the 17.4 mm thickness goes. The generator checks the display, divider, expansion space, protected pack and rear wall as one explicit stack, then rejects collisions against the rounded interior. [The engineering walkthrough](ENGINEERING.md) follows that budget and shows which missing measurements can invalidate it.
+
 ![Pager slim concept in the project viewer](assets/slim-concept.jpg)
 
 *CAD concept, not a photograph of a built device. The 96 x 166 x 17.4 mm envelope is a design target.*
