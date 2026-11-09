@@ -1,0 +1,284 @@
+{
+  "units": "mm",
+  "status": "17.4 mm USB-C-only packaging target with a provisional aluminum rear and insulated battery contact. Requires an unselected display, controller and protected pack. Not a validated build or fabrication-ready enclosure.",
+  "axes": "x left to right, y top to bottom, z front to back",
+  "body": {
+    "size": [
+      96,
+      166,
+      17.4
+    ],
+    "corner_radius": 6,
+    "wall_mm": {
+      "front": 1.4,
+      "side": 1.4,
+      "rear": 1.0
+    },
+    "rear_material": "aluminum",
+    "rear_thickness_verified": false
+  },
+  "components": [
+    {
+      "id": "display",
+      "name": "Thin display target",
+      "position": [
+        6,
+        6,
+        1.4
+      ],
+      "size": [
+        84,
+        84,
+        6.8
+      ],
+      "evidence": "Hypothetical 6.8 mm panel assembly. No matching panel, touch assembly, connector or driver is selected. This is not the 14.04 mm Waveshare stock assembly scaled down.",
+      "verified_geometry": false
+    },
+    {
+      "id": "keyboard",
+      "name": "Custom 35-key thumb keyboard target",
+      "position": [
+        4,
+        116,
+        1.4
+      ],
+      "size": [
+        88,
+        46,
+        4.5
+      ],
+      "evidence": "Custom 35-key planning envelope, not the KeebDeck footprint. Key mechanism, matrix, caps, PCB and retainer remain undesigned.",
+      "verified_geometry": false
+    },
+    {
+      "id": "battery",
+      "name": "Protected pouch battery reservation",
+      "position": [
+        6,
+        8,
+        9.2
+      ],
+      "size": [
+        58,
+        82,
+        7
+      ],
+      "evidence": "Unselected protected pack envelope including protection, lead exit and NTC. Capacity unknown. A separate 0.8 mm front expansion allowance and 0.2 mm rear insulating thermal interface are provisional until the pack supplier approves the stack.",
+      "verified_geometry": false
+    },
+    {
+      "id": "power",
+      "name": "Power PCB reservation",
+      "position": [
+        66,
+        18,
+        9
+      ],
+      "size": [
+        25,
+        60,
+        5
+      ],
+      "evidence": "Reserved component envelope. Routing, thermal copper, connectors and height remain unresolved.",
+      "verified_geometry": false
+    },
+    {
+      "id": "orange_pi",
+      "name": "Orange Pi Zero 2W reservation",
+      "position": [
+        15.5,
+        128,
+        8
+      ],
+      "size": [
+        65,
+        30,
+        7
+      ],
+      "evidence": "65 x 30 mm PCB size is published. The 7 mm populated reservation retains the existing sockets. No height saving is claimed from hiding external ports. Internal HDMI/USB cables, antenna clearance and heat path still need measurement.",
+      "verified_geometry": false
+    },
+    {
+      "id": "display_controller",
+      "name": "Separate HDMI controller target",
+      "position": [
+        66,
+        82,
+        9
+      ],
+      "size": [
+        25,
+        30,
+        5
+      ],
+      "evidence": "Hypothetical controller envelope beside the battery. No compatible HDMI-to-panel controller has been selected or verified within this size.",
+      "verified_geometry": false
+    },
+    {
+      "id": "trackball",
+      "name": "Pimoroni PIM447 trackball module reservation",
+      "position": [
+        35.5,
+        92,
+        1.4
+      ],
+      "size": [
+        25,
+        22,
+        11
+      ],
+      "evidence": "Supplier-listed 25 x 22 x 11 mm module represented by a bounding box. No detailed module CAD or mounting geometry is imported. Supplier listing currently has no stock.",
+      "source": "https://shop.pimoroni.com/products/trackball-breakout",
+      "verified_geometry": false
+    }
+  ],
+  "unresolved": [
+    "17.4 mm is a packaging target, not an achieved thickness. Component and connector meshes are planning envelopes.",
+    "The 1.0 mm aluminum rear requires stiffness, fastening, edge and drop checks; it is not a manufacturing specification.",
+    "The existing 14.04 mm Waveshare display cannot occupy the 6.8 mm panel target. No manufacturer geometry is scaled.",
+    "A thin display/touch assembly and matched separate HDMI controller must be sourced and tested at the required resolution.",
+    "Only USB-C is externally accessible. The Orange Pi sockets and internal HDMI/USB links still occupy space. No socket removal is assumed.",
+    "USB-C opening and connector/cable keepout are provisional. Internal HDMI/USB plugs, panel flex routing, cable bends and strain relief remain unmodeled and may enlarge the device.",
+    "The 0.2 mm divider, 0.8 mm forward pack expansion clearance and 0.2 mm insulating thermal interface are separate reservations. Their materials, tolerances, swelling allowance and contact pressure require pack-supplier approval.",
+    "The rear must never clamp the pouch. Do not use bare aluminum contact or route CPU/converter heat through the battery. A shared aluminum rear can transfer heat into the pack and requires closed-case temperature measurements.",
+    "The 58 x 82 x 7 mm protected pack is unselected; capacity, current rating, protection, lead exit and NTC require a supplier drawing.",
+    "PIM447 sourcing, mounting holes, ball protrusion, click travel, cleaning access and wiring require a purchased module and measurements.",
+    "The 35-key keyboard needs key mechanics, contacts, a retainer and physical typing tests.",
+    "The 4 mm planar gap between power and display-controller reservations may not fit actual cables and thermal requirements.",
+    "Antenna position and a polymer RF window or antenna beyond the aluminum rear must be established from the exact SBC revision. The full rear plate is a material study, not a validated RF design.",
+    "Screws, mounts, battery retention and heat-spreader routing remain undesigned. Screws and sharp edges must remain outside the pouch and its expansion volume."
+  ],
+  "battery_stack": {
+    "divider_mm": 0.2,
+    "expansion_clearance_mm": 0.8,
+    "thermal_interface_mm": 0.2,
+    "supplier_expansion_required_mm": null,
+    "supplier_approved": false,
+    "thermal_interface_verified": false,
+    "contact_policy": "The pack contacts the rear through an electrically insulating thermal interface. Retention must not compress the pouch; expansion is reserved toward the front. Bare aluminum contact and routing SBC or converter heat through the pack are excluded."
+  },
+  "stack_reservations": [
+    {
+      "id": "battery_divider",
+      "name": "Battery protective divider reservation",
+      "position": [
+        6,
+        8,
+        8.2
+      ],
+      "size": [
+        58,
+        82,
+        0.2
+      ],
+      "kind": "divider",
+      "verified_geometry": false
+    },
+    {
+      "id": "battery_expansion",
+      "name": "Battery forward expansion clearance",
+      "position": [
+        6,
+        8,
+        8.4
+      ],
+      "size": [
+        58,
+        82,
+        0.8
+      ],
+      "kind": "clearance",
+      "verified_geometry": false
+    },
+    {
+      "id": "battery_interface",
+      "name": "Insulating thermal interface reservation",
+      "position": [
+        6,
+        8,
+        16.2
+      ],
+      "size": [
+        58,
+        82,
+        0.2
+      ],
+      "kind": "thermal_interface",
+      "verified_geometry": false
+    }
+  ],
+  "external_ports": [
+    {
+      "id": "usb_c",
+      "name": "USB-C charge input",
+      "edge": "top",
+      "opening": {
+        "position": [
+          73,
+          0,
+          10.5
+        ],
+        "size": [
+          10,
+          1.4,
+          4.4
+        ]
+      },
+      "keepout": {
+        "position": [
+          71,
+          1.4,
+          9.2
+        ],
+        "size": [
+          14,
+          16.6,
+          6
+        ]
+      },
+      "verified_geometry": false,
+      "evidence": "One external connector. Opening and connector/cable allowance are provisional until a receptacle and mating plug are selected. Touch, keyboard, HDMI, storage and debug connections remain internal."
+    }
+  ],
+  "face_recesses": [
+    {
+      "id": "screen",
+      "position": [
+        11.735,
+        11.735,
+        -1
+      ],
+      "size": [
+        72.53,
+        72.53,
+        1.7
+      ]
+    },
+    {
+      "id": "keyboard",
+      "position": [
+        4,
+        116,
+        -1
+      ],
+      "size": [
+        88,
+        46,
+        1.7
+      ]
+    },
+    {
+      "id": "trackball",
+      "position": [
+        35.5,
+        92,
+        -1
+      ],
+      "size": [
+        25,
+        22,
+        1.7
+      ]
+    }
+  ]
+}

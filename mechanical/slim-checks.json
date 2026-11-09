@@ -1,0 +1,53 @@
+{
+  "status": "Geometric reservation checks only. Pack, thermal contact, connector and enclosure remain unverified.",
+  "body_mm": [
+    96,
+    166,
+    17.4
+  ],
+  "wall_mm": {
+    "front": 1.4,
+    "side": 1.4,
+    "rear": 1.0
+  },
+  "all_reservations_inside_rounded_wall": true,
+  "component_reservation_intersections": [],
+  "display_battery_depth_gap_mm": 1.0,
+  "battery_to_outer_rear_mm": 1.2,
+  "battery_to_inner_rear_mm": 0.2,
+  "battery_trackball_planar_gap_mm": 2,
+  "trackball_keyboard_planar_gap_mm": 2,
+  "power_controller_planar_gap_mm": 4,
+  "battery_stack_mm": {
+    "divider_mm": 0.2,
+    "expansion_clearance_mm": 0.8,
+    "thermal_interface_mm": 0.2
+  },
+  "battery_stack_supplier_approved": false,
+  "thermal_interface_verified": false,
+  "external_connector_ids": [
+    "usb_c"
+  ],
+  "connector_geometry_verified": false,
+  "manufacturer_display_imported_or_scaled": false,
+  "not_checked": [
+    "17.4 mm is a packaging target, not an achieved thickness. Component and connector meshes are planning envelopes.",
+    "The 1.0 mm aluminum rear requires stiffness, fastening, edge and drop checks; it is not a manufacturing specification.",
+    "The existing 14.04 mm Waveshare display cannot occupy the 6.8 mm panel target. No manufacturer geometry is scaled.",
+    "A thin display/touch assembly and matched separate HDMI controller must be sourced and tested at the required resolution.",
+    "Only USB-C is externally accessible. The Orange Pi sockets and internal HDMI/USB links still occupy space. No socket removal is assumed.",
+    "USB-C opening and connector/cable keepout are provisional. Internal HDMI/USB plugs, panel flex routing, cable bends and strain relief remain unmodeled and may enlarge the device.",
+    "The 0.2 mm divider, 0.8 mm forward pack expansion clearance and 0.2 mm insulating thermal interface are separate reservations. Their materials, tolerances, swelling allowance and contact pressure require pack-supplier approval.",
+    "The rear must never clamp the pouch. Do not use bare aluminum contact or route CPU/converter heat through the battery. A shared aluminum rear can transfer heat into the pack and requires closed-case temperature measurements.",
+    "The 58 x 82 x 7 mm protected pack is unselected; capacity, current rating, protection, lead exit and NTC require a supplier drawing.",
+    "PIM447 sourcing, mounting holes, ball protrusion, click travel, cleaning access and wiring require a purchased module and measurements.",
+    "The 35-key keyboard needs key mechanics, contacts, a retainer and physical typing tests.",
+    "The 4 mm planar gap between power and display-controller reservations may not fit actual cables and thermal requirements.",
+    "Antenna position and a polymer RF window or antenna beyond the aluminum rear must be established from the exact SBC revision. The full rear plate is a material study, not a validated RF design.",
+    "Screws, mounts, battery retention and heat-spreader routing remain undesigned. Screws and sharp edges must remain outside the pouch and its expansion volume."
+  ],
+  "dummy_valid": true,
+  "dummy_solids": 1,
+  "dummy_artifact_stem": "slim-grip-dummy-96x166x17.4",
+  "assembly_solid_count": 12
+}
