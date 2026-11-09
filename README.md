@@ -2,11 +2,23 @@
 
 A pocket Linux computer concept with a thumb keyboard, clickable trackball and a single external USB-C opening. This repository contains the self-contained CAD generator and geometry checks for the slim packaging study.
 
-The key engineering question is where every fraction of the 17.4 mm thickness goes. The generator checks the display, divider, expansion space, protected pack and rear wall as one explicit stack, then rejects collisions against the rounded interior. [The engineering walkthrough](ENGINEERING.md) follows that budget and shows which missing measurements can invalidate it.
+The generator checks the display, divider, expansion space, protected pack and rear wall as one stack, then rejects collisions against the rounded interior. [The engineering walkthrough](ENGINEERING.md) follows the 17.4 mm thickness budget and identifies the missing measurements.
 
 ![Pager slim concept in the project viewer](assets/slim-concept.jpg)
 
 *CAD concept, not a photograph of a built device. The 96 x 166 x 17.4 mm envelope is a design target.*
+
+## Open the CAD and parts
+
+| File | Contents |
+| --- | --- |
+| [Assembly STEP](mechanical/slim-packaging-target.step) | Computer, display, battery and control-board reservations |
+| [Grip-dummy STEP](mechanical/slim-grip-dummy-96x166x17.4.step) | Editable exchange model of the current outer envelope |
+| [Grip-dummy STL](mechanical/slim-grip-dummy-96x166x17.4.stl) | Print model for checking hand feel; no working enclosure mounts |
+| [Parts list](parts-list.csv) | Quantities, candidate parts, sources and conditions that block purchasing |
+| [Layout](mechanical/slim-layout.json) and [geometry report](mechanical/slim-checks.json) | Dimensions, clearances and unresolved verification flags |
+
+The parts list belongs to the October 30 Orange Pi packaging study shown here. It separates bench parts, slim-build candidates and unselected assemblies. Supplier availability entries are dated observations. No custom keyboard or power PCB, firmware, tested battery pack or matched slim display has been completed.
 
 ## What this repository demonstrates
 
@@ -51,7 +63,7 @@ The public source snapshot regenerated the CAD and passed **24 tests on November
 - [`mechanical/build_slim.py`](mechanical/build_slim.py) generates the CAD and reports.
 - [`mechanical/test_slim.py`](mechanical/test_slim.py) exercises the geometry and exported files.
 
-The public snapshot contains the current slim design. The older stock-parts model, external vendor CAD and personal planning notes are excluded. The image above records the existing project viewer; that viewer is not part of this source package.
+The public snapshot contains the current slim design, its STEP/STL exports and the candidate parts list. The older stock-parts model, external vendor CAD and personal planning notes are excluded. The image above records the existing project viewer; that viewer is not part of this source package.
 
 ## Next build gate
 

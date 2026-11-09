@@ -6,3 +6,6 @@ __pycache__/
 mechanical/*.step
 mechanical/*.stl
 preview/dist/
+!mechanical/slim-grip-dummy-96x166x17.4.step
+!mechanical/slim-grip-dummy-96x166x17.4.stl
+!mechanical/slim-packaging-target.step
